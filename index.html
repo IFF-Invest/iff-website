@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFF – Invest For Freedom</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('https://cdn.pixabay.com/photo/2020/01/24/09/25/piggy-bank-4785477_1280.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+    header {
+      background-color: rgba(0, 51, 102, 0.9);
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    section {
+      background-color: rgba(255, 255, 255, 0.95);
+      margin: 20px auto;
+      padding: 40px 20px;
+      max-width: 1000px;
+      border-radius: 10px;
+    }
+    .highlight, .calculator {
+      background-color: #e8f0fe;
+      border-left: 5px solid #003366;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .features, .comparison {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .feature-box, .compare-box {
+      flex: 1 1 45%;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    label, input {
+      display: block;
+      margin: 10px 0;
+    }
+    footer {
+      background-color: rgba(0, 51, 102, 0.9);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .feature-box, .compare-box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>IFF – Invest For Freedom</h1>
+    <p>Freedom starts with financial independence.</p>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>At IFF, we help people turn small savings into passive income through smart, low-risk investments. We manage your funds across lending, stocks, mutual funds, and more — so you earn without stress, even with as little as ₹500.</p>
+  </section>
+
+  <section>
+    <h2>Our Mission</h2>
+    <p>To build a future where financial freedom is simple, achievable, and within everyone’s reach.</p>
+    <h2>Our Vision</h2>
+    <p>To simplify wealth-building by turning small savings into steady, passive income.</p>
+  </section>
+
+  <section class="highlight">
+    <h2>Why Choose IFF?</h2>
+    <div class="features">
+      <div class="feature-box">✅ Fixed Monthly Returns</div>
+      <div class="feature-box">✅ Start with ₹500</div>
+      <div class="feature-box">✅ We Handle the Risk</div>
+      <div class="feature-box">✅ Invest Without Market Knowledge</div>
+      <div class="feature-box">✅ High Liquidity</div>
+      <div class="feature-box">✅ Transparent & Trustworthy</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Comparison: IFF vs Others</h2>
+    <div class="comparison">
+      <div class="compare-box"><strong>With Others</strong><br> ❌ No fixed returns<br> ❌ You bear the risk<br> ❌ No security<br> ❌ Delayed returns</div>
+      <div class="compare-box"><strong>With IFF</strong><br> ✅ Fixed monthly returns<br> ✅ We take the risk<br> ✅ Security above ₹25,000<br> ✅ Returns when you want</div>
+    </div>
+  </section>
+
+  <section class="calculator">
+    <h2>Investment Calculator</h2>
+    <label for="amount">Enter Investment Amount (₹):</label>
+    <input type="number" id="amount" placeholder="e.g. 5000">
+    <label for="rate">Monthly Return Rate (%):</label>
+    <input type="number" id="rate" value="2" disabled>
+    <label for="months">Duration (Months):</label>
+    <input type="number" id="months" placeholder="e.g. 12">
+    <button onclick="calculateReturns()">Calculate</button>
+    <p id="result"></p>
+    <script>
+      function calculateReturns() {
+        const amount = parseFloat(document.getElementById('amount').value);
+        const rate = parseFloat(document.getElementById('rate').value);
+        const months = parseInt(document.getElementById('months').value);
+        if (isNaN(amount) || isNaN(rate) || isNaN(months)) {
+          document.getElementById('result').innerText = 'Please enter valid numbers.';
+          return;
+        }
+        const monthlyReturn = amount * (rate / 100);
+        const totalReturn = monthlyReturn * months;
+        const finalAmount = amount + totalReturn;
+        document.getElementById('result').innerText = `Total Returns in ${months} months: ₹${totalReturn.toFixed(2)}
+Final Amount: ₹${finalAmount.toFixed(2)}`;
+      }
+    </script>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> +91-XXXXXXXXXX<br>
+       <strong>Email:</strong> contact@iffinvest.com<br>
+       <strong>Website:</strong> www.iffinvest.com<br>
+       <strong>WhatsApp:</strong> +91-XXXXXXXXXX<br>
+       <strong>Instagram:</strong> @iff_invest<br>
+       <strong>Office:</strong> [Your Address Here]</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IFF – Invest For Freedom. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
